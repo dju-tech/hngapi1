@@ -20,8 +20,8 @@ class SlackView(APIView):
       'current_day' : day,
       'utc_time' : datetime.datetime.utcnow(),
       'track' : track,
-      "github_file_url": "",
-      "github_repo_url": "",
+      "github_file_url": "https://github.com/eletrikode/hngapi1/blob/main/api/views.py",
+      "github_repo_url": "https://github.com/eletrikode/hngapi1",
       "status_code": 200
     }
     return Response(data)
