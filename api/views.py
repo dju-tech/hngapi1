@@ -2,7 +2,6 @@ from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
 import datetime
-import time
 
 class SlackView(APIView):
 
@@ -13,12 +12,11 @@ class SlackView(APIView):
     day = today.strftime("%A")
 
     current_utc_time = datetime.datetime.utcnow()
-    time.sleep(2)
-
+    formatted_utc_time = current_utc_time.strftime("%Y-%m-%dT%H:%M:%SZ")
     data = {
       'slack_name' : slack_name,
       'current_day' : day,
-      'utc_time' : datetime.datetime.utcnow(),
+      'utc_time' : formatted_utc_time,
       'track' : track,
       "github_file_url": "https://github.com/eletrikode/hngapi1/blob/main/api/views.py",
       "github_repo_url": "https://github.com/eletrikode/hngapi1",
